@@ -1,11 +1,83 @@
 <!DOCTYPE html>
+<meta charset="UTF-8">
 <html>
 <head>
-</head>
-<form action="">
-<script type="text/javascript" src="source.js">
+  
+	<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementsByClassName('a');
+    const input = document.getElementsByClassName('select');
+    const inputDataField = document.getElementById('inputDataField');
+    const cal=document.getElementById('Datepicker1')
+    const button=document.getElementsByClassName('button1')
+    input[0].addEventListener('change',event => {
+      console.log(input[0].value)
+      button[0].classList.remove('hidden')
+      cal.classList.add("hidden")
+      if(input[0].value == "docker") {
+        cal.classList.add('hidden')
+        inputDataField.classList.remove('hidden');
+      }
+      else if (input[0].value == "cal"){
+        inputDataField.classList.add("hidden")
+        cal.classList.remove('hidden');
+        button[0].classList.add('hidden')
+      }  
+        
+      
+      
+    });
+
+    form[0].addEventListener('submit', event => {
+      const index= input[0].selectedIndex
+      const toSay = input[0].item(index).innerHTML
+      const utterance = new SpeechSynthesisUtterance(toSay);
+      speechSynthesis.speak(utterance);
+      input[0].value = (cmd);
+      
+    });
+
+  });
+
 </script>
-<h1>Welcome to Everyone </h1>
-<p> What do you want to run: select from the list below</p>
+ <link rel="stylesheet" href="gradient.css">
+ <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+ <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+ <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+</head>
+<!-- " -->
+<form class="a" action="http://192.168.43.109/cgi-bin/runner.py">
+<div class="wrapper"><h1 style="color:#346eeb;" >👋Welcome to Everyone </h1>
+<img src="https://access.redhat.com/webassets/avalon/g/shadowman-200.png" height="140" width="200"></div>
+<p style="text-align: center;"> <b>What do you want to run</b></p>
+<label class="wrapper" for="cmd">Choose a Command:</label>
+<div class="rowclass">
+  <div>
+    <select  class="select" name="pgm">
+      <option value="date">Run Date</option>
+      <option value="cal">Show Calender</option>
+      <option value="whoami">As which user running</option>
+      <option value="firefox">firefox</option>
+      <option value="docker">Run docker</option> 
+    </select>
+  </div> 
+
+  <div id="inputDataField" class="hidden">
+    
+    <input name="ostype"type="text" placeholder="Type OSname Here!">
+  </div>
+  </div>
+  <br><br>
+   <div id="Datepicker1" class="hidden"></div>
+    <script type="text/javascript">
+      $(function() {
+        $("#Datepicker1").datepicker({
+         numberOfMonths: 1
+        }); 
+      });
+    </script>
+  <div class="wrapper">
+    <input  class='button1' type="submit" value="RUN">
+  </div>
 </form>
 </html>
