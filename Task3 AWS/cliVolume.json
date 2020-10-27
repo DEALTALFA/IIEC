@@ -1,0 +1,17 @@
+{
+    "AvailabilityZone": "ap-south-1b",
+    "CreateTime": "2020-10-16T13:14:25+00:00",
+    "Encrypted": false,
+    "Size": 1,
+    "SnapshotId": "",
+    "State": "creating",
+    "VolumeId": "vol-03e12e281d393f557",
+    "Iops": 100,
+    "Tags": [
+        {
+            "Key": "Name",
+            "Value": "cliVolume"
+        }
+    ],
+    "VolumeType": "gp2"
+}
