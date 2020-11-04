@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-
+#macbook
 
 print("Content-Type:text/html")
 print()
