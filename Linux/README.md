@@ -8,6 +8,9 @@
    
    `yum install docker-ce` 
    
+   ![image](https://user-images.githubusercontent.com/60976631/105753322-86f24e00-5f6e-11eb-881e-6c86b4642ca5.png)
+
+   
    it will give error bcz community edition docker for Rhel is not available(Except for Enteprise Edition which is paid)
    ## So we need to trick the system  .
    **Step 1**: Go to browser and search for [docker rpm download](https://www.google.com/search?q=docker+rpm+download&rlz=1C1CHBD_enIN907IN907&oq=docker&aqs=chrome.0.69i59l2j35i39j0l2j69i61l2j69i60.1427j0j7&sourceid=chrome&ie=UTF-8).
