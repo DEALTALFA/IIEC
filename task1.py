@@ -1,4 +1,3 @@
-#TRY NEW
 import os
 import pyttsx3
 Amisha=pyttsx3.init()
